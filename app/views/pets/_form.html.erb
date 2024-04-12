@@ -34,10 +34,15 @@
               formmethod: :dialog %>
     <% if pet.id %>
       <div class="py-1 px-4 rounded bg-red-500 hover:bg-red-700 text-white font-sans font-bold">
-        <%= button_to "Delete",
+        <%= button_to "btnDelete",
                 pet_path(pet),
                 method: :delete,
                 form: { data: { turbo_confirm: "Are you sure?" } } %>
+      </div>
+      <div class="py-1 px-4 rounded bg-red-500 hover:bg-red-700 text-white font-sans font-bold">
+        <%= link_to "lnkDelete",
+                pet_path(pet),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
       </div>
     <% end %>
   </div>
