@@ -1,0 +1,11 @@
+<%= turbo_stream.show_remote_modal do %>
+  <dialog id="pets_form_modal"
+          aria-labelledby="modal_title">
+    <%= render 'modal_header',
+                title: 'New Pet' %>
+
+    <%= render 'form',
+                pet: @pet,
+                method: :post %>
+  </dialog>
+<% end %>

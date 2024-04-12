@@ -1,0 +1,11 @@
+<%= turbo_stream.show_remote_modal do %>
+  <dialog id="pet_form_modal"
+          aria-labelledby="modal_title">
+    <%= render 'modal_header',
+                title: 'Edit Pet' %>
+
+    <%= render 'form',
+                pet: @pet,
+                method: :patch %>
+  </dialog>
+<% end %>

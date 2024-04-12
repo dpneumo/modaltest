@@ -1,0 +1,10 @@
+  <tr class='<%= background %>' >
+    <td class='td-pad'>
+      <%= link_to pet.name,
+              edit_pet_path(pet),
+              class: "td-emphasized link-hover",
+              data: { turbo_stream: true } %>
+    </td>
+    <td class='td-pad td-base'><%= pet.color %></td>
+    <td class='td-pad td-base'><%= pet.pettype %></td>
+  </tr>

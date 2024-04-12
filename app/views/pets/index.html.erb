@@ -1,0 +1,27 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Pets</h1>
+    <%= link_to "New pet",
+            new_pet_path,
+            class: "text-lg font-sans font-medium link-hover",
+            data: { turbo_stream: true } %>
+  </div>
+
+  <div id="pets" class="min-w-full">
+    <table class="w-full text-xl font-medium">
+      <thead class="bg-gray-400 font-sans font-medium dark:border-neutral-800 dark:bg-neutral-300">
+        <%= render 'head' %>
+      </thead>
+      <tbody>
+        <% @pets.each_with_index do |pet, i| %>
+          <% background = i.even? ? 'bg-white' : 'bg-gray-200' %>
+          <%= render 'row', pet: pet, background: background %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
